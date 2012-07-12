@@ -123,34 +123,34 @@ You can generate a PDF or an HTML copy of this guide using
     ```Ruby
     # starting point (line is too long)
     def send_mail(source)
-      Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
+      Mailer.deliver(:to => 'bob@example.com', :from => 'us@example.com', :subject => 'Important message', :body => source.text)
     end
 
     # bad (normal indent)
     def send_mail(source)
       Mailer.deliver(
-        to: 'bob@example.com',
-        from: 'us@example.com',
-        subject: 'Important message',
-        body: source.text)
+        :to => 'bob@example.com',
+        :from => 'us@example.com',
+        :subject => 'Important message',
+        :body => source.text)
     end
 
     # bad (double indent)
     def send_mail(source)
       Mailer.deliver(
-          to: 'bob@example.com',
-          from: 'us@example.com',
-          subject: 'Important message',
-          body: source.text)
+          to => 'bob@example.com',
+          from => 'us@example.com',
+          subject => 'Important message',
+          body => source.text)
     end
 
     # good
     def send_mail(source)
       Mailer.deliver(
-        to:      'bob@example.com',
-        from:    'us@example.com',
-        subject: 'Important message',
-        body:     source.text
+        to       => 'bob@example.com',
+        from     => 'us@example.com',
+        subject  => 'Important message',
+        body     =>  source.text
       )
     end
     ```
@@ -514,7 +514,7 @@ you if you forget either of the rules above!
 
     ```Ruby
     # bad
-    hash = { one: 1, two: 2 }
+    hash = { :one => 1, :two => 2 }
 
     # good
     hash = { :one => 1, :two => 2 }
