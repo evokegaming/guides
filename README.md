@@ -201,10 +201,12 @@ You can generate a PDF or an HTML copy of this guide using
 
     # good
     def send_mail(source)
-      Mailer.deliver(to: 'bob@example.com',
-                     from: 'us@example.com',
-                     subject: 'Important message',
-                     body: source.text)
+      Mailer.deliver(
+        to:      'bob@example.com',
+        from:    'us@example.com',
+        subject: 'Important message',
+        body:     source.text
+      )
     end
     ```
 
@@ -216,7 +218,8 @@ You can generate a PDF or an HTML copy of this guide using
 ## Syntax
 
 1. Use `def` with parentheses when there are arguments. Omit the
-  parentheses when the method doesn't accept any arguments.
+  parentheses when the method doesn't accept any arguments both in calling and
+  declaration.
 
      ```Ruby
      def some_method
@@ -316,7 +319,7 @@ You can generate a PDF or an HTML copy of this guide using
     end
 
     # control flow
-    document.saved? or document.save!
+    user_id = params[:user_id] or return 'MISSING_USER_ID'
     ```
 
 1. Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
@@ -351,7 +354,7 @@ You can generate a PDF or an HTML copy of this guide using
     some_condition or do_something
     ```
 
-1. Never use `unless` with `else`. Rewrite these with the positive case first.
+1. Favor use of `unless` with `else`. Rewrite these with the positive case first.
 
     ```Ruby
     # bad
@@ -562,15 +565,14 @@ would happen if the current value happened to be `false`.)
 1. Always run the Ruby interpreter with the `-w` option so it will warn
 you if you forget either of the rules above!
 
-1. When the keys of your hash are symbols use the Ruby 1.9 hash literal
-syntax.
+1. When the keys of your hash are symbols use the ruby hash rocket syntax.
 
     ```Ruby
     # bad
-    hash = { :one => 1, :two => 2 }
+    hash = { one: 1, two: 2 }
 
     # good
-    hash = { one: 1, two: 2 }
+    hash = { :one => 1, :two => 2 }
     ```
 
 1. Use the new lambda literal syntax.
@@ -656,7 +658,8 @@ syntax.
     ```
 
 1. When using `reduce` with short blocks, name the arguments `|a, e|`
-  (accumulator, element).
+  (accumulator, element). Unless more clear names can be used, the
+  point being to avoid `|a,b|`.
 1. When defining binary operators, name the argument `other`.
 
     ```Ruby
@@ -891,7 +894,7 @@ in accordance with their intended usage. Don't go off leaving
 everything `public` (which is the default). After all we're coding
 in *Ruby* now, not in *Python*.
 1. Indent the `public`, `protected`, and `private` methods as much the
-  method definitions they apply to. Leave one blank line above them.
+  method definitions they apply to. Leave one blank line above and below them.
 
     ```Ruby
     class SomeClass
@@ -1065,7 +1068,7 @@ in *Ruby* now, not in *Python*.
       # exception handling
     end
 
-    # also good
+    # better
     begin
       # an exception occurs here
 
@@ -1159,19 +1162,18 @@ strings.
     hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
 
     # good
-    hash = { one: 1, two: 2, three: 3 }
+    hash = { :one => 1, :two => 2, :three => 3 }
     ```
 
 1. Avoid the use of mutable object as hash keys.
-1. Use the new 1.9 literal hash syntax in preference to the hashrocket
-syntax.
+1. Use the hash rocket syntax in preference to the new 1.9 literal hash syntax.
 
     ```Ruby
     # bad
-    hash = { :one => 1, :two => 2, :three => 3 }
+    hash = { one: 1, two: 2, three: 3 }
 
     # good
-    hash = { one: 1, two: 2, three: 3 }
+    hash = { :one => 1, :two => 2, :three => 3 }
     ```
 
 1. Rely on the fact that hashes in 1.9 are ordered.
@@ -1189,11 +1191,14 @@ syntax.
     email_with_name = "#{user.name} <#{user.email}>"
     ```
 
-1. Consider padding string interpolation code with space. It more clearly sets the
-  code apart from the string.
+1. Don't padd string interpolation code with space.
 
     ```Ruby
+    # bad
     "#{ user.last_name }, #{ user.first_name }"
+
+    # good
+    "#{user.last_name}, #{user.first_name}"
     ```
 
 1. Prefer single-quoted strings when you don't need string interpolation or
@@ -1207,8 +1212,7 @@ syntax.
     name = 'Bozhidar'
     ```
 
-1. Don't use `{}` around instance variables being interpolated into a
-  string.
+1. Use `{}` around instance variables being interpolated into a string.
 
     ```Ruby
     class Person
@@ -1351,7 +1355,7 @@ syntax.
 
 1. Avoid `%q`, `%Q`, `%x`, `%s`, and `%W`.
 
-1. Prefer `()` as delimiters for all `%` literals.
+1. Prefer `[]` as delimiters for all `%` literals.
 
 ## Metaprogramming
 
@@ -1374,14 +1378,24 @@ patch them.)
     UNSAFE_STRING_METHODS.each do |unsafe_method|
       if 'String'.respond_to?(unsafe_method)
         class_eval <<-EOT, __FILE__, __LINE__ + 1
-          def #{unsafe_method}(*args, &block)       # def capitalize(*args, &block)
-            to_str.#{unsafe_method}(*args, &block)  #   to_str.capitalize(*args, &block)
-          end                                       # end
 
-          def #{unsafe_method}!(*args)              # def capitalize!(*args)
-            @dirty = true                           #   @dirty = true
-            super                                   #   super
-          end                                       # end
+          # Result:
+          # def capitalize(*args, &block)
+          #   to_str.capitalize(*args, &block)
+          # end
+          def #{unsafe_method}(*args, &block)
+            to_str.#{unsafe_method}(*args, &block)
+          end
+
+          # Result:
+          # def capitalize!(*args)
+          #   @dirty = true
+          #   super
+          # end
+          def #{unsafe_method}!(*args)
+            @dirty = true
+            super
+          end
         EOT
       end
     end
