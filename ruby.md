@@ -835,6 +835,7 @@ in *Ruby* now, not in *Python*.
       end
 
       private
+
       def private_method
         # ...
       end
