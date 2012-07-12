@@ -294,9 +294,6 @@ You can generate a PDF or an HTML copy of this guide using
 
     # good
     do_something unless some_condition
-
-    # another good option
-    some_condition or do_something
     ```
 
 1. Favor use of `unless` with `else`. Rewrite these with the positive case first.
