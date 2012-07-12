@@ -511,7 +511,7 @@ you if you forget either of the rules above!
 
     ```Ruby
     # bad
-    hash = { :one => 1, :two => 2 }
+    hash = { one: 1, two: 2 }
 
     # good
     hash = { :one => 1, :two => 2 }
