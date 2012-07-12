@@ -1,56 +1,6 @@
-# Prelude
+# The Redbet Ruby Style Guide
 
-> Style is what separates the good from the great. <br/>
-> -- Bozhidar Batsov
-
-One thing has always bothered me as Ruby developer - Python developers
-have a great programming style reference
-([PEP-8](http://www.python.org/dev/peps/pep-0008/)) and we never got
-an official guide, documenting Ruby coding style and best
-practices. And I do believe that style matters. I also believe that
-such fine fellows, like us Ruby developers, should be quite capable to
-produce this coveted document.
-
-This guide started its life as our internal company Ruby coding guidelines
-(written by yours truly). At some point I decided that the work I was
-doing might be interesting to members of the Ruby community in general
-and that the world had little need for another internal company
-guideline. But the world could certainly benefit from a
-community-driven and community-sanctioned set of practices, idioms and
-style prescriptions for Ruby programming.
-
-Since the inception of the guide I've received a lot of feedback from
-members of the exceptional Ruby community around the world. Thanks for
-all the suggestions and the support! Together we can make a resource
-beneficial to each and every Ruby developer out there.
-
-By the way, if you're into Rails you might want to check out the
-complementary
-[Ruby on Rails 3 Style Guide](https://github.com/bbatsov/rails-style-guide).
-
-# The Ruby Style Guide
-
-This Ruby style guide recommends best practices so that real-world Ruby
-programmers can write code that can be maintained by other real-world Ruby
-programmers. A style guide that reflects real-world usage gets used, and a
-style guide that holds to an ideal that has been rejected by the people it is
-supposed to help risks not getting used at all &ndash; no matter how good it is.
-
-The guide is separated into several sections of related rules. I've
-tried to add the rationale behind the rules (if it's omitted I've
-assumed that is pretty obvious).
-
-I didn't come up with all the rules out of nowhere - they are mostly
-based on my extensive career as a professional software engineer,
-feedback and suggestions from members of the Ruby community and
-various highly regarded Ruby programming resources, such as
-["Programming Ruby 1.9"](http://pragprog.com/book/ruby3/programming-ruby-1-9)
-and ["The Ruby Programming Language"](http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177).
-
-The guide is still a work in progress - some rules are lacking
-examples, some rules don't have examples that illustrate them clearly
-enough. In due time these issues will be addressed - just keep them in
-mind for now.
+Forked from https://github.com/bbatsov/ruby-style-guide
 
 You can generate a PDF or an HTML copy of this guide using
 [Transmuter](https://github.com/TechnoGate/transmuter).
@@ -72,11 +22,6 @@ You can generate a PDF or an HTML copy of this guide using
 * [Misc](#misc)
 
 ## Source Code Layout
-
-> Nearly everybody is convinced that every style but their own is
-> ugly and unreadable. Leave out the "but their own" and they're
-> probably right... <br/>
-> -- Jerry Coffin (on indentation)
 
 1. Use `UTF-8` as the source file encoding.
 1. Use two **spaces** per indentation level.
@@ -599,10 +544,6 @@ you if you forget either of the rules above!
 
 ## Naming
 
-> The only real difficulties in programming are cache invalidation and
-> naming things. <br/>
-> -- Phil Karlton
-
 1. Use `snake_case` for methods and variables.
 1. Use `CamelCase` for classes and modules.  (Keep acronyms like HTTP,
   RFC, XML uppercase.)
@@ -678,12 +619,6 @@ you if you forget either of the rules above!
 
 ## Comments
 
-> Good code is its own best documentation. As you're about to add a
-> comment, ask yourself, "How can I improve the code so that this
-> comment isn't needed?" Improve the code and then document it to make
-> it even clearer. <br/>
-> -- Steve McConnell
-
 1. Write self-documenting code and ignore the rest of this section. Seriously!
 1. Comments longer than a word are capitalized and use punctuation. Use [one
   space](http://en.wikipedia.org/wiki/Sentence_spacing) after periods.
@@ -696,9 +631,6 @@ you if you forget either of the rules above!
 
 1. Keep existing comments up-to-date. An outdated is worse than no comment
 at all.
-
-> Good code is like a good joke - it needs no explanation. <br/>
-> -- Russ Olsen
 
 1. Avoid writing comments to explain bad code. Refactor the code to
   make it self-explanatory. (Do or do not - there is no try. --Yoda)
