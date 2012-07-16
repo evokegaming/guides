@@ -147,10 +147,10 @@ You can generate a PDF or an HTML copy of this guide using
     # good
     def send_mail(source)
       Mailer.deliver(
-        to       => 'bob@example.com',
-        from     => 'us@example.com',
-        subject  => 'Important message',
-        body     =>  source.text
+        to      => 'bob@example.com',
+        from    => 'us@example.com',
+        subject => 'Important message',
+        body    =>  source.text
       )
     end
     ```
