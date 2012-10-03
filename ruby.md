@@ -296,7 +296,7 @@ You can generate a PDF or an HTML copy of this guide using
     do_something unless some_condition
     ```
 
-1. Favor use of `unless` with `else`. Rewrite these with the positive case first.
+1. Favor use of `if` with `else`.
 
     ```Ruby
     # bad
