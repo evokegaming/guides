@@ -614,6 +614,33 @@ you if you forget either of the rules above!
   reason the use of `select` is encouraged over `find_all` is that it
   goes together nicely with `reject` and its name is pretty self-explanatory.
 
+1. Avoid `get_` and `set_` method names.
+
+    ```Ruby
+    # bad
+    def get_currency
+      @currency
+    end
+
+    def set_currency(name)
+      @currency = name
+    end
+
+    # good
+    def currency
+      @currency
+    end
+
+    def currency=(name)
+      @currency = name
+    end
+
+    # even better (unless custom getters and setters are needed)
+    attr_reader   :currency
+    attr_writer   :currency
+    # attr_accessor :currency # read *and* write shortcut
+    ```
+
 ## Comments
 
 1. Write self-documenting code and ignore the rest of this section. Seriously!
