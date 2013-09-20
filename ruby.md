@@ -754,6 +754,35 @@ mutators.
       end
     end
     ```
+1. Prefer instance variables over accessors *within the class* for clarity
+
+    ```Ruby
+    # bad
+    class Person
+      attr_reader :first_name
+
+      def initialize(first_name)
+        @first_name = first_name
+      end
+
+      def first_name_reversed
+        first_name.reverse # missing @
+      end
+    end
+
+    # good
+    class Person
+      attr_reader :first_name
+
+      def initialize(first_name)
+        @first_name = first_name
+      end
+
+      def first_name_reversed
+        @first_name.reverse
+      end
+    end
+    ```
 1. Consider using `Struct.new`, which defines the trivial accessors,
 constructor and comparison operators for you.
 
