@@ -150,7 +150,7 @@ You can generate a PDF or an HTML copy of this guide using
         to:      'bob@example.com',
         from:    'us@example.com',
         subject: 'Important message',
-        body:     source.text
+        body:    source.text
       )
     end
     ```
