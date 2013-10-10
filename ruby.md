@@ -123,34 +123,34 @@ You can generate a PDF or an HTML copy of this guide using
     ```Ruby
     # starting point (line is too long)
     def send_mail(source)
-      Mailer.deliver(:to => 'bob@example.com', :from => 'us@example.com', :subject => 'Important message', :body => source.text)
+      Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
     end
 
     # bad (normal indent)
     def send_mail(source)
       Mailer.deliver(
-        :to => 'bob@example.com',
-        :from => 'us@example.com',
-        :subject => 'Important message',
-        :body => source.text)
+        to: 'bob@example.com',
+        from: 'us@example.com',
+        subject: 'Important message',
+        body: source.text)
     end
 
     # bad (double indent)
     def send_mail(source)
       Mailer.deliver(
-          to => 'bob@example.com',
-          from => 'us@example.com',
-          subject => 'Important message',
-          body => source.text)
+          to: 'bob@example.com',
+          from: 'us@example.com',
+          subject: 'Important message',
+          body: source.text)
     end
 
     # good
     def send_mail(source)
       Mailer.deliver(
-        to      => 'bob@example.com',
-        from    => 'us@example.com',
-        subject => 'Important message',
-        body    =>  source.text
+        to:      'bob@example.com',
+        from:    'us@example.com',
+        subject: 'Important message',
+        body:     source.text
       )
     end
     ```
@@ -507,14 +507,14 @@ would happen if the current value happened to be `false`.)
 1. Always run the Ruby interpreter with the `-w` option so it will warn
 you if you forget either of the rules above!
 
-1. When the keys of your hash are symbols use the ruby hash rocket syntax.
+1. When the keys of your hash are symbols use the short syntax.
 
     ```Ruby
     # bad
-    hash = { one: 1, two: 2 }
+    hash = { :one => 1, :two => 2 }
 
     # good
-    hash = { :one => 1, :two => 2 }
+    hash = { one: 1, two: 2 }
     ```
 
 1. Use the new lambda literal syntax.
@@ -1148,18 +1148,18 @@ strings.
     hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
 
     # good
-    hash = { :one => 1, :two => 2, :three => 3 }
+    hash = { one: 1, two: 2, three: 3 }
     ```
 
 1. Avoid the use of mutable object as hash keys.
-1. Use the hash rocket syntax in preference to the new 1.9 literal hash syntax.
+1. Prefer the hash syntax introduced in 1.9 over hash rockets.
 
     ```Ruby
     # bad
-    hash = { one: 1, two: 2, three: 3 }
+    hash = { :one => 1, :two => 2, :three => 3 }
 
     # good
-    hash = { :one => 1, :two => 2, :three => 3 }
+    hash = { one: 1, two: 2, three: 3 }
     ```
 
 1. Rely on the fact that hashes in 1.9 are ordered.
