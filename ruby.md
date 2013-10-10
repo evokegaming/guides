@@ -1162,7 +1162,6 @@ strings.
     hash = { one: 1, two: 2, three: 3 }
     ```
 
-1. Rely on the fact that hashes in 1.9 are ordered.
 1. Never modify a collection while traversing it.
 
 ## Strings
