@@ -597,7 +597,7 @@ you if you forget either of the rules above!
 
 1. When using `reduce` with short blocks, name the arguments `|a, e|`
   (accumulator, element). Unless more clear names can be used, the
-  point being to avoid `|a,b|`.
+  point being to avoid `|a, b|`.
 1. When defining binary operators, name the argument `other`.
 
     ```Ruby
@@ -1176,7 +1176,7 @@ strings.
     email_with_name = "#{user.name} <#{user.email}>"
     ```
 
-1. Don't padd string interpolation code with space.
+1. Don't pad string interpolation code with space.
 
     ```Ruby
     # bad
