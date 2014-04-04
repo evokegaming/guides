@@ -123,34 +123,34 @@ You can generate a PDF or an HTML copy of this guide using
     ```Ruby
     # starting point (line is too long)
     def send_mail(source)
-      Mailer.deliver(:to => 'bob@example.com', :from => 'us@example.com', :subject => 'Important message', :body => source.text)
+      Mailer.deliver(to: 'bob@example.com', from: 'us@example.com', subject: 'Important message', body: source.text)
     end
 
     # bad (normal indent)
     def send_mail(source)
       Mailer.deliver(
-        :to => 'bob@example.com',
-        :from => 'us@example.com',
-        :subject => 'Important message',
-        :body => source.text)
+        to: 'bob@example.com',
+        from: 'us@example.com',
+        subject: 'Important message',
+        body: source.text)
     end
 
     # bad (double indent)
     def send_mail(source)
       Mailer.deliver(
-          to => 'bob@example.com',
-          from => 'us@example.com',
-          subject => 'Important message',
-          body => source.text)
+          to: 'bob@example.com',
+          from: 'us@example.com',
+          subject: 'Important message',
+          body: source.text)
     end
 
     # good
     def send_mail(source)
       Mailer.deliver(
-        to      => 'bob@example.com',
-        from    => 'us@example.com',
-        subject => 'Important message',
-        body    =>  source.text
+        to:      'bob@example.com',
+        from:    'us@example.com',
+        subject: 'Important message',
+        body:    source.text
       )
     end
     ```
@@ -507,14 +507,14 @@ would happen if the current value happened to be `false`.)
 1. Always run the Ruby interpreter with the `-w` option so it will warn
 you if you forget either of the rules above!
 
-1. When the keys of your hash are symbols use the ruby hash rocket syntax.
+1. When the keys of your hash are symbols use the short syntax.
 
     ```Ruby
     # bad
-    hash = { one: 1, two: 2 }
+    hash = { :one => 1, :two => 2 }
 
     # good
-    hash = { :one => 1, :two => 2 }
+    hash = { one: 1, two: 2 }
     ```
 
 1. Use the new lambda literal syntax.
@@ -597,7 +597,7 @@ you if you forget either of the rules above!
 
 1. When using `reduce` with short blocks, name the arguments `|a, e|`
   (accumulator, element). Unless more clear names can be used, the
-  point being to avoid `|a,b|`.
+  point being to avoid `|a, b|`.
 1. When defining binary operators, name the argument `other`.
 
     ```Ruby
@@ -719,7 +719,7 @@ at all.
       end
 
       def to_s
-        "#@first_name #@last_name"
+        "#{@first_name} #{@last_name}"
       end
     end
     ```
@@ -1127,7 +1127,7 @@ strings.
     STATES = ['draft', 'open', 'closed']
 
     # good
-    STATES = %w(draft open closed)
+    STATES = %w[draft open closed]
     ```
 
 1. Avoid the creation of huge gaps in arrays.
@@ -1148,21 +1148,20 @@ strings.
     hash = { 'one' => 1, 'two' => 2, 'three' => 3 }
 
     # good
-    hash = { :one => 1, :two => 2, :three => 3 }
+    hash = { one: 1, two: 2, three: 3 }
     ```
 
 1. Avoid the use of mutable object as hash keys.
-1. Use the hash rocket syntax in preference to the new 1.9 literal hash syntax.
+1. Prefer the hash syntax introduced in 1.9 over hash rockets.
 
     ```Ruby
     # bad
-    hash = { one: 1, two: 2, three: 3 }
+    hash = { :one => 1, :two => 2, :three => 3 }
 
     # good
-    hash = { :one => 1, :two => 2, :three => 3 }
+    hash = { one: 1, two: 2, three: 3 }
     ```
 
-1. Rely on the fact that hashes in 1.9 are ordered.
 1. Never modify a collection while traversing it.
 
 ## Strings
@@ -1177,7 +1176,7 @@ strings.
     email_with_name = "#{user.name} <#{user.email}>"
     ```
 
-1. Don't padd string interpolation code with space.
+1. Don't pad string interpolation code with space.
 
     ```Ruby
     # bad
@@ -1302,41 +1301,41 @@ strings.
 1. Use `%w` freely.
 
     ```Ruby
-    STATES = %w(draft open closed)
+    STATES = %w[draft open closed]
     ```
 
-1. Use `%()` for single-line strings which require both interpolation
+1. Use `%[]` for single-line strings which require both interpolation
   and embedded double-quotes. For multi-line strings, prefer heredocs.
 
     ```Ruby
     # bad (no interpolation needed)
-    %(<div class="text">Some text</div>)
+    %[<div class="text">Some text</div>]
     # should be '<div class="text">Some text</div>'
 
     # bad (no double-quotes)
-    %(This is #{quality} style)
+    %[This is #{quality} style]
     # should be "This is #{quality} style"
 
     # bad (multiple lines)
-    %(<div>\n<span class="big">#{exclamation}</span>\n</div>)
+    %[<div>\n<span class="big">#{exclamation}</span>\n</div>]
     # should be a heredoc.
 
     # good (requires interpolation, has quotes, single line)
-    %(<tr><td class="name">#{name}</td>)
+    %[<tr><td class="name">#{name}</td>]
     ```
 
 1. Use `%r` only for regular expressions matching *more than* one '/' character.
 
     ```Ruby
     # bad
-    %r(\s+)
+    %r[\s+]
 
     # still bad
-    %r(^/(.*)$)
+    %r[^/(.*)$]
     # should be /^\/(.*)$/
 
     # good
-    %r(^/blog/2011/(.*)$)
+    %r[^/blog/2011/(.*)$]
     ```
 
 1. Avoid `%q`, `%Q`, `%x`, `%s`, and `%W`.
