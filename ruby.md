@@ -159,6 +159,7 @@ You can generate a PDF or an HTML copy of this guide using
    empty line between the comment block and the `def`.
 1. Keep lines fewer than 80 characters.
 1. Avoid trailing whitespace.
+1. Single newline at EOF.
 
 ## Syntax
 
