@@ -926,12 +926,11 @@ in *Ruby* now, not in *Python*.
 
 ## Exceptions
 
-1. Signal exceptions using the `fail` keyword. Use `raise` only when
-  catching an exception and re-raising it (because here you're not failing, but explicitly and purposefully raising an exception).
+1. Signal exceptions using the `raise` keyword. Do not use the `fail` keyword.
 
     ```Ruby
     begin
-      fail 'Oops';
+      raise 'Oops';
     rescue => error
       raise if error.message != 'Oops'
     end
@@ -946,7 +945,7 @@ in *Ruby* now, not in *Python*.
     ```Ruby
     def foo
       begin
-        fail
+        raise
       ensure
         return 'very bad idea'
       end
