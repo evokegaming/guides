@@ -1,4 +1,4 @@
-# The Redbet Ruby Style Guide
+# The Ruby Style Guide
 
 Forked from https://github.com/bbatsov/ruby-style-guide
 
