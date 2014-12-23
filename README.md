@@ -1,7 +1,5 @@
 # The Ruby Style Guide
 
-Forked from https://github.com/bbatsov/ruby-style-guide
-
 You can generate a PDF or an HTML copy of this guide using
 [Transmuter](https://github.com/TechnoGate/transmuter).
 
@@ -1457,6 +1455,13 @@ community.
 
 Feel free to open tickets or send pull requests with improvements. Thanks in
 advance for your help!
+
+# Licence
+This is a derivative of
+[The Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide)
+by [Bozhidar Batsov](https://github.com/bbatsov),
+used under [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/),
+licensed under [CC-BY 3.0](http://creativecommons.org/licenses/by/3.0/).
 
 # Spread the Word
 
