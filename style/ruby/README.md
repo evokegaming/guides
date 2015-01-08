@@ -877,6 +877,7 @@ in inheritance.
 in accordance with their intended usage. Don't go off leaving
 everything `public` (which is the default). After all we're coding
 in *Ruby* now, not in *Python*.
+
 11. Indent the `public`, `protected`, and `private` methods as much the
   method definitions they apply to. Leave one blank line above and below them.
 
@@ -892,6 +893,7 @@ in *Ruby* now, not in *Python*.
         # ...
       end
     end
+    ```
 
 12. Use `def self.method` to define singleton methods. This makes the methods
   more resistant to refactoring changes.
@@ -1059,7 +1061,6 @@ in *Ruby* now, not in *Python*.
     rescue StandardError => e
       # exception handling
     end
-
     ```
 
 8. Put more specific exceptions higher up the rescue chain, otherwise
