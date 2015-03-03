@@ -77,28 +77,28 @@ into several makes more sense.
     refs #123
 
 ### Merge commits
-* Subject kept as-is, even if it exceeds 50 characters
-* Avoid merge conflicts whenever possible
-* Conflicts section kept as-is
-* Avoid fast-forwards (use option `--no-ff` for `git merge`)
-* Lists all commits merged (use option `--log=<n>` for `git merge` or set the
-  `merge.log` config option)
-* No issue reference
+1. Subject kept as-is, even if it exceeds 50 characters
+2. Avoid merge conflicts whenever possible
+3. Conflicts section kept as-is
+4. Avoid fast-forwards (use option `--no-ff` for `git merge`)
+5. Lists all commits merged (use option `--log=<n>` for `git merge` or set the
+   `merge.log` config option)
+6. No issue reference
 
 ### Reversion commits
-* Subject kept as-is, even if it exceeds 50 characters
-* Line saying which commit is reverted kept as-is
-* Body explains reason for the reversion
-* Include issue reference
+1. Subject kept as-is, even if it exceeds 50 characters
+2. Line saying which commit is reverted kept as-is
+3. Body explains reason for the reversion
+4. Include issue reference
 
 ## Commit contents
-* Each commit introduces one logical change
-    * Changes not described in the commit message do not belong in the commit
-    * Multiple unrelated changes are not to be grouped in the same commit
+1. Each commit introduces one logical change
+    1. Changes not described in the commit message do not belong in the commit
+    2. Multiple unrelated changes are not to be grouped in the same commit
 
-* One logical change is not to be split over many commits
-    * Squash changes that do not make sense on their own
-    * Squash review fixes into the appropriate commit(s)
+2. One logical change is not to be split over many commits
+    1. Squash changes that do not make sense on their own
+    2. Squash review fixes into the appropriate commit(s)
 
 Do not combine changes of different type into the same commit. Examples of
 change types are:
@@ -111,49 +111,50 @@ change types are:
 
 Furthermore:
 
-* Commits do not introduce whitespace errors
-* Line-endings are LF (third-party files exempt)
-* Single newline at EOF
-* Commits adding third-party code must state from where the code was acquired as
-  well as its version, and must add the third-party code as-is. Changes to
-  third-party should be thought of as a last resort and belong in a separate
-  commit.
+1. Commits do not introduce whitespace errors
+2. Line-endings are LF (third-party files exempt)
+3. Single newline at EOF
+4. Commits adding third-party code must state from where the code was acquired
+   as well as its version, and must add the third-party code as-is. Changes to
+   third-party should be thought of as a last resort and belong in a separate
+   commit.
 
 ## Branches
-* Branch `master` contains the latest stable release
-* Integration branches are namespaced `integration/`
-* Individual words in branch names are separated by hyphen-minus (`-`)
+1. Branch `master` contains the latest stable release
+2. Integration branches are namespaced `integration/`
+3. Individual words in branch names are separated by hyphen-minus (`-`)
 
 ### Personal branches
-* Personal branches are namespaced `<name>/` where `<name>` is your firstname or
-  known nickname.
-* It is a good idea to push even unfinished work to your personal namespace
-  frequently.
-* Do not base work on someone else's personal branch unless explicitly told to
-  do so.
-* Personal branches that are sent for deploy follow the form
-  `<name>/<issue>-<short-description>`, e.g. `charlemagne/123-promote-the-arts`.
+1. Personal branches are namespaced `<name>/` where `<name>` is your firstname
+   or known nickname.
+2. It is a good idea to push even unfinished work to your personal namespace
+   frequently.
+3. Do not base work on someone else's personal branch unless explicitly told to
+   do so.
+4. Personal branches that are sent for deploy follow the form
+   `<name>/<issue>-<short-description>`, e.g.
+   `charlemagne/123-promote-the-arts`.
 
 ## Workflow
-* Do not rewrite another person's commit without permission
-    * Makes it difficult to know whether or not that commit reflects what the
-      original author wrote.
+1. Do not rewrite another person's commit without permission
+    1. Makes it difficult to know whether or not that commit reflects what the
+       original author wrote.
 
-* Rebase personal branches before requesting merge
-    * Makes it possible to spot potential problems early
-    * Reduces risk of merge complications
+2. Rebase personal branches before requesting merge
+    1. Makes it possible to spot potential problems early
+    2. Reduces risk of merge complications
 
-* Do not work in isolation for long periods of time
-    * Makes it hard to spot potential problems early
-    * Increases risk of merge complications
+3. Do not work in isolation for long periods of time
+    1. Makes it hard to spot potential problems early
+    2. Increases risk of merge complications
 
-* Do not create merge commits in personal branches
-    * Makes the history unnecessarily complex
-    * Personal branches should be simple and short-lived
+4. Do not create merge commits in personal branches
+    1. Makes the history unnecessarily complex
+    2. Personal branches should be simple and short-lived
 
-* Delete remote branch when it has been merged
-    * Superfluous entropy serves no purpose
+5. Delete remote branch when it has been merged
+    1. Superfluous entropy serves no purpose
 
 ## Tags
-* All tags are annotated (`-a`)
-* Individual words in tags are separated by hyphen-minus (`-`)
+1. All tags are annotated (`-a`)
+2. Individual words in tags are separated by hyphen-minus (`-`)
