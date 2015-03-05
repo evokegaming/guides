@@ -936,7 +936,7 @@ in *Ruby* now, not in *Python*.
     end
     ```
 
-2. Never return form an `ensure` block. If you explicitly return from a
+2. Never return from an `ensure` block. If you explicitly return from a
   method inside an `ensure` block, the return will take precedence over
   any exception being raised, and the method will return as if no
   exception had been raised at all. In effect, the exception will be
