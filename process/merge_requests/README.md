@@ -105,3 +105,12 @@ Redmine (if the reviewer hasn't done it already).
 
 You don't need to close the MR, it will be closed automatically when the branch
 is merged into `master` (or whatever other branch was set as the target branch).
+
+## Finding merge requests
+As stated at the end of the "Creation procedure" section, if an issue in
+Redmine has code that should be reviewed, a link to the corresponding MR in
+GitLab *must* be posted. This link will probably be the easiest way to find the
+MR in GitLab.
+
+You can also go to GitLab and simply search for the issue number (`#` character
+not necessary) in the search bar located in the top right.
