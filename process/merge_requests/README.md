@@ -97,8 +97,9 @@ become easier to if you surround it with backticks.
 
 ### Closing a merge requests
 When the reviewer considers the code ready to merge, he'll say so, and a label
-will be applied that indicates that the branch is ready to merge and deploy.
-Don't worry about the label, someone else will handle applying it.
+with the name `ready-to-merge` will be applied, indicating that the branch is
+ready to merge and deploy.
+Don't worry about applying the label, someone else will handle it.
 
 Once it has been said in the MR that it's ready for merging, write the same in
 Redmine (if the reviewer hasn't done it already).
