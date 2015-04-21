@@ -23,7 +23,7 @@ Before you set the status to "Feedback", make sure that there's a Merge Request
 
 These are the steps necessary:
 
-1. Log into GitLab.
+1. Log in to GitLab.
 2. When logged in, you should arrive at the Dashboard (as written in the top
    left). Click "Projects" in the menu to the left.
 3. Choose the project which you wish to submit a MR for. Most of the time, this
@@ -51,7 +51,7 @@ corresponding Redmine issue.
 #### Title and Description guidelines
 The title should always look something like this:
 
-    #12345: Adjust constant in warpcore.yml to prevent overheating
+    #12345: Adjust constant in warpcore configuration to prevent overheating
 
 Notice the issue number at the start, including the `#` character. This text
 will automatically be linked to the Redmine issue, which makes it easy to access
@@ -62,8 +62,8 @@ The description should include the following:
 
 * What the MR changes, being a bit more descriptive than the title.
 * If there's something you're unsure of how it should be done, point this out so
-  the reviewer can help you out.
-* If necessary, include information that would help the reviewers understand
+  that the reviewer can help you out.
+* If necessary, include information that would help the reviewer understand
   *why* you made certain changes. This information should already be present in
   the form of [well written commit messages](../../style/git), but it doesn't
   hurt including this in the MR description.
@@ -77,25 +77,25 @@ The description should include the following:
 The process of working within MRs doesn't differ much from how review has been
 handled over in Redmine, with one major difference:
 
-If you make an adjustment (eg. to address a comment that was left by
+If you make an adjustment (e.g. to address a comment that was left by
 a reviewer) and push the resulting code, this will immediately be reflected in
 the MR. This way, the reviewer will always see the latest version of the branch
 in the MR.
 
 Additionally, commenting on specific lines in the code is very easy, so feel
-free to use the feature whenever it's applicable. To comment on a line, press
-the "Changes" tab near the top of the MR, then press a line number in one of the
+free to use the feature whenever applicable. To comment on a line, press the
+"Changes" tab near the top of the MR, then press a line number in one of the
 changed files to open up a comment box.
 
 Everywhere where you can leave a comment,
 [GitLab flavoured Markdown](http://doc.gitlab.com/ce/markdown/markdown.html) is
 used. While it's helpful if you glance through the entire document, if you only
-take away one thing from that it, it should be that you can turn any text into
+take away one thing from it, it should be that you can turn any text into
 monospaced by surrounding it with backticks (or grave accents, as they're also
 called: `` ` ``). If you're talking about `SomeClass.with.some_method`, things
 become easier to if you surround it with backticks.
 
-### Closing a merge requests
+### Closing a merge request
 When the reviewer considers the code ready to merge, he'll say so, and a label
 with the name `ready-to-merge` will be applied, indicating that the branch is
 ready to merge and deploy.
@@ -105,8 +105,8 @@ rights will handle it.
 Once it has been said in the MR that it's ready for merging, write the same in
 Redmine (if the reviewer hasn't done it already).
 
-You don't need to close the MR, it will be closed automatically when the branch
-is merged into `master` (or whatever other branch was set as the target branch).
+Do not close the MR, it will be closed automatically when the branch is merged
+into `master` (or whatever other branch was set as the target branch).
 
 ## Finding merge requests
 As stated at the end of the "Creation procedure" section, if an issue in
