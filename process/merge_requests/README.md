@@ -74,9 +74,31 @@ The description should include the following:
   so that they too can be reviewed.
 
 ### Working with merge requests
-The process of working within MRs doesn't differ much from how review has been
-handled over in Redmine, with one major difference:
+#### Git
+The process of working and commiting when working in conjunction with MRs
+doesn't differ much from how work has been handled when we only used Redmine,
+but there's one major difference:
 
+Due to how GitLab handles comments on specific commits/lines, it's advised to
+use fixup commits that are squashed by the end of the life cycle of the MR.
+
+What does this mean?
+
+Let's say you've submitted your MR and the reviewer wants you to change
+something in a previous commit. If you previously had the habit of creating
+a commit, rebasing and squashing right away: refrain from doing so. The
+preferred way of doing things in this system [is to create fixup commits][1]
+that are squashed at the very end of the life cycle of the MR, so pretty much
+when the reviewer approves the MR for merging.
+
+  [1]: http://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html
+
+Basically, prefer not to rewrite history, until the MR is about to be merged.
+
+If there's no need to rewrite history, for instance if you start adding new
+features after the MR is submitted, just keep working as you always have.
+
+#### The merge request interface
 If you make an adjustment (e.g. to address a comment that was left by
 a reviewer) and push the resulting code, this will immediately be reflected in
 the MR. This way, the reviewer will always see the latest version of the branch
