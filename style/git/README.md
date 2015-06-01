@@ -50,9 +50,7 @@ into several makes more sense.
     Subject line has at most 50 characters
 
     A blank line separates the subject line and the body. The body is
-    wrapped at 72 characters, no more and no less. This means that no line
-    may be longer than 72 characters and no line is wrapped at less than 72
-    characters.
+    word wrapped at 72 characters, no more and no less.
 
     Separate your commit message into paragraphs if you have a lot of text
     in order to improve readability.
