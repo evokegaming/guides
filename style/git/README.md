@@ -52,8 +52,8 @@ into several makes more sense.
     A blank line separates the subject line and the body. The body is
     word wrapped at 72 characters, no more and no less.
 
-    Separate your commit message into paragraphs if you have a lot of text
-    in order to improve readability.
+    Separate your commit message into paragraphs if you have a lot of
+    text in order to improve readability.
 
     - This is a bullet list
     - It uses hyphen-dashes and it is not indented
