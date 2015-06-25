@@ -77,7 +77,7 @@ into several makes more sense.
 ### Merge commits
 1. Subject kept as-is, even if it exceeds 50 characters
 2. Avoid merge conflicts whenever possible
-3. Conflicts section kept as-is
+3. Keep the "Conflicts:" listing by uncommenting it
 4. Avoid fast-forwards (use option `--no-ff` for `git merge`)
 5. Lists all commits merged (use option `--log=<n>` for `git merge` or set the
    `merge.log` config option)
