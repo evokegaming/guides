@@ -13,8 +13,8 @@
    If there is a merge conflict or potential semantic conflict, get the author
    to rebase on lastest `master`. If there is still a merge conflict or semantic
    conflict, see if conflicting branch can be moved to next deploy opportunity.
-   If conflict resolution must happen, handle with care. Leave the conflicts
-   section of the commit message as-is.
+   If conflict resolution must happen, handle with care. Keep the conflicts
+   section of the commit message by uncommenting it.
 
 3. Run all tests.
 
