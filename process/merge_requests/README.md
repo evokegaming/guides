@@ -109,14 +109,14 @@ free to use the feature whenever applicable. To comment on a line, press the
 "Changes" tab near the top of the MR, then press a line number in one of the
 changed files to open up a comment box.
 
-Everywhere where you can leave a comment, [GitLab flavoured Markdown][1] is
+Everywhere where you can leave a comment, [GitLab flavoured Markdown][GFMD] is
 used. While it's helpful if you glance through the entire document, if you only
 take away one thing from it, it should be that you can turn any text into
 monospaced by surrounding it with backticks (or grave accents, as they're also
 called: `` ` ``). If you're talking about `SomeClass.with.some_method`, things
 become easier to if you surround it with backticks.
 
-  [1]: http://doc.gitlab.com/ce/markdown/markdown.html
+  [GFMD]: http://doc.gitlab.com/ce/markdown/markdown.html
 
 ### Closing a merge request
 When the reviewer considers the code ready to merge, he'll say so, and a label
