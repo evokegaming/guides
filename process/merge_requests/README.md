@@ -87,11 +87,11 @@ What does this mean?
 Let's say you've submitted your MR and the reviewer wants you to change
 something in a previous commit. If you previously had the habit of creating
 a commit, rebasing and squashing right away: refrain from doing so. The
-preferred way of doing things in this system [is to create fixup commits][1]
+preferred way of doing things in this system [is to create fixup commits][fixup]
 that are squashed at the very end of the life cycle of the MR, so pretty much
 when the reviewer approves the MR for merging.
 
-  [1]: http://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html
+  [fixup]: http://fle.github.io/git-tip-keep-your-branch-clean-with-fixup-and-autosquash.html
 
 Basically, prefer not to rewrite history, until the MR is about to be merged.
 
