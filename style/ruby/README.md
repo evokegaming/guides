@@ -541,8 +541,7 @@ you if you forget either of the rules above!
 ## Naming
 
 1. Use `snake_case` for methods and variables.
-2. Use `CamelCase` for classes and modules.  (Keep acronyms like HTTP,
-  RFC, XML uppercase.)
+2. Use `CamelCase` for classes and modules.
 3. Use `SCREAMING_SNAKE_CASE` for other constants.
 4. The names of predicate methods (methods that return a boolean value)
   should end in a question mark. (i.e. `Array#empty?`).
