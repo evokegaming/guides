@@ -33,7 +33,7 @@ The commit message body describes the current state (**why**):
 
 It describes what the the commit does to change the current state (**what**):
 
-* Match the subject and use imperative mood "Let's fix foo by doing bar"
+* Match the subject and use imperative mood "Fix foo by doing bar"
 * Or use a descriptive tone "This fixes foo by doing bar"
 
 When including URLs, avoid using URL shortener services and use full original
