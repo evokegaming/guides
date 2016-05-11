@@ -1163,6 +1163,33 @@ strings.
 
 8. Never modify a collection while traversing it.
 
+9. Add a comma after the last element of a multiline `Array` or `Hash`
+   literal. This makes the style consistent across the elements and
+   improves the readability of the diff resulting from addition or
+   removal of an element.
+
+    ```Ruby
+    # bad
+    [
+      1001,
+      2020,
+      3333
+    ]
+
+    # bad
+    [1001, 2020, 3333,]
+
+    # good
+    [1001, 2020, 3333]
+
+    # good
+    [
+      1001,
+      2020,
+      3333,
+    ]
+    ```
+
 ## Strings
 
 1. Prefer string interpolation instead of string concatenation:
