@@ -4,9 +4,9 @@
 ### Content
 The commit message serves to provide a technical description of the change
 introduced by its commit. It should be possible to look at a commit message in
-combination with its diff and quickly understand **what** was changed **where**,
-**how** it was changed and **why**. Simple changes sometimes speak for
-themselves. Complex changes need more explanation.
+combination with its diff and quickly understand **what** was changed
+**where**, **how** it was changed and **why**. Simple changes sometimes speak
+for themselves. Complex changes need more explanation.
 
 * Commits are a form of documentation
 * Time spent writing costs less than the time spent reading
@@ -31,7 +31,7 @@ The commit message body describes the current state (**why**):
 * Use present tense, e.g. "Foo does not work"
 * Avoid past tense, e.g. "Foo did not work"
 
-It describes what the the commit does to change the current state (**what**):
+It describes what the commit does to change the current state (**what**):
 
 * Match the subject and use imperative mood "Fix foo by doing bar"
 * Or use a descriptive tone "This fixes foo by doing bar"
@@ -118,12 +118,12 @@ Furthermore:
    commit.
 
 ## Branches
-1. Branch `master` contains the latest stable release
+1. Branch `next` contains the latest stable release
 2. Integration branches are namespaced `integration/`
 3. Individual words in branch names are separated by hyphen-minus (`-`)
 
 ### Personal branches
-1. Personal branches are namespaced `<name>/` where `<name>` is your firstname
+1. Personal branches are namespaced `<name>/` where `<name>` is your first name
    or known nickname.
 2. It is a good idea to push even unfinished work to your personal namespace
    frequently.
@@ -149,9 +149,6 @@ Furthermore:
 4. Do not create merge commits in personal branches
     1. Makes the history unnecessarily complex
     2. Personal branches should be simple and short-lived
-
-5. Delete remote branch when it has been merged
-    1. Superfluous entropy serves no purpose
 
 ## Tags
 1. All tags are annotated (`-a`)
