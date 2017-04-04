@@ -118,7 +118,7 @@ Furthermore:
    commit.
 
 ## Branches
-1. Branch `next` contains the latest stable release
+1. Branch `master` contains the latest stable release
 2. Integration branches are namespaced `integration/`
 3. Individual words in branch names are separated by hyphen-minus (`-`)
 

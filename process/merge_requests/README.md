@@ -14,7 +14,6 @@ Let's assume you've worked on an issue enough to set the status to review,
 which would put it into the review's queue.
 
 Before you set the status to review, make sure that there's a Merge Request
-
 (henceforth referred to as "MR") available in GitLab.
 
 These are the steps necessary:
@@ -54,7 +53,6 @@ The description should include the following:
 * A direct link to the JIRA ticket, in the form of: `refs [#12345](https://jira.server/12345)`
 * What the MR changes, being a bit more descriptive than the title.  If there's
 * something you're unsure of how it should be done, point this out so
-
   that the reviewer can help you out.
 * If necessary, include information that would help the reviewer understand
   *why* you made certain changes. This information should already be present in
